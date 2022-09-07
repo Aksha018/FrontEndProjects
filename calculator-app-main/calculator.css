@@ -1,0 +1,237 @@
+.container[data-theme="first"] {
+    --t1-key-equal-red-shadow: hsl(6, 70%, 34%);
+    --t1-key-orange-background-toggle: hsl(6, 63%, 50%);
+    --t1-key-rest-background: hsl(225, 21%, 49%);
+    --t1-key-rest-shadow: hsl(224, 28%, 35%);
+    --t1-key-number-background: hsl(30, 25%, 89%);
+    --t1-key-number-shadow: hsl(28, 16%, 65%);
+    --t1-mainbackground: hsl(222, 26%, 31%);
+    --t1-screen-background: hsl(224, 36%, 15%);
+    --t1-text-blue: hsl(221, 14%, 31%);
+    --t1-text-display: white;
+    --t1-text-white: white;
+    --t1-toggle-keypad-background: hsl(223, 31%, 20%);   
+}
+  
+.container[data-theme="second"] {
+    --t1-key-equal-red-shadow: hsl(25, 99%, 27%);
+    --t1-key-orange-background-toggle: hsl(25, 98%, 40%);
+    --t1-key-rest-background: rgb(26, 161, 158);
+    --t1-key-rest-shadow: hsl(35, 11%, 61%);
+    --t1-key-number-background: hsl(30, 25%, 89%);
+    --t1-key-number-shadow: hsl(28, 16%, 65%);
+    --t1-mainbackground: hsl(0, 0%, 90%);
+    --t1-screen-background: hsl(0, 0%, 93%);
+    --t1-text-blue: hsl(60, 10%, 19%);
+    --t1-text-display: hsl(60, 10%, 19%);
+    --t1-text-white: hsl(60, 10%, 19%);
+    --t1-toggle-keypad-background: hsl(0, 5%, 81%);
+}
+  
+.container[data-theme="third"] {
+    --t1-key-equal-red-shadow: hsl(177, 92%, 70%);
+    --t1-key-orange-background-toggle: hsl(176, 100%, 44%);
+    --t1-key-rest-background: hsl(268, 47%, 21%);
+    --t1-key-rest-shadow: hsl(290, 70%, 36%);
+    --t1-key-number-background: hsl(281, 89%, 26%);
+    --t1-key-number-shadow: hsl(285, 91%, 52%);
+    --t1-mainbackground: hsl(268, 75%, 9%);
+    --t1-screen-background: hsl(268, 71%, 12%);
+    --t1-text-blue: hsl(52, 100%, 62%);
+    --t1-text-display: hsl(52, 100%, 62%);
+    --t1-text-white: white;
+    --t1-toggle-keypad-background: hsl(268, 71%, 12%);
+}
+
+body {
+    background-color: var(--t1-mainbackground);
+}
+
+.main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    margin-left: 30%;
+    margin-right: 25%;
+    width: 40%;
+}
+
+.head {
+    align-items: center;
+    color: var(--t1-text-white);
+    display: flex;   
+    font-family: 'Spartan', sans-serif;
+    height: 10%;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+}
+
+.themes {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 30%;
+}
+
+.theme-toggle {
+    align-items: flex-start;
+    background-color: var(--t1-toggle-keypad-background);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    height: 20px;
+    padding: 3px;
+    width: 70px;
+}
+
+input[type='radio']:after {
+    background-color: var(--t1-toggle-keypad-background);
+    border-radius: 15px;
+    content: '';
+    cursor: pointer;
+    display: inline-block;
+    height: 15px;
+    left: -1px;
+    outline: none;
+    position: relative;
+    top: -2px;
+    visibility: visible;
+    width: 15px;
+}
+
+input[type='radio']:checked:after {
+    background-color: var(--t1-key-orange-background-toggle);
+    border-radius: 15px;
+    content: '';
+    cursor: pointer;
+    display: inline-block;
+    height: 15px;
+    left: -1px;
+    outline: none;
+    position: relative;
+    top: -2px;
+    visibility: visible;
+    width: 15px;
+}
+
+#answer {
+    background-color: var(--t1-screen-background);
+    border-radius: 7px;
+    color: var(--t1-text-white);
+    font-size: 55px;
+    font-weight: 700;
+    height: 80px;
+    padding-bottom: 25px;
+    padding-right: 10px;
+    padding-top: 35px;
+    text-align: right;
+    width: 100%;
+}
+
+.grid_btns {
+    align-content: space-around;
+    background-color: var(--t1-toggle-keypad-background);
+    border-radius: 7px;
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: 100px 100px 100px 100px;
+    justify-content: center;
+    margin-top: 10px;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    width: 100%;
+}
+
+#btn1, 
+#btn2, 
+#btn3, 
+#btn4, 
+#btn5, 
+#btn6, 
+#btn7, 
+#btn8, 
+#btn9, 
+#btn_0, 
+#btn_slh, 
+#btn_dt, 
+#btn_pls, 
+#btn_mns, 
+#btn_mul {
+    background-color: var(--t1-key-number-background);
+    border: 0px;
+    border-radius: 7px;
+    box-shadow: 0px 3px var(--t1-key-number-shadow);
+    color: var(--t1-text-blue);
+    cursor: pointer;
+    display: flex;
+    font-family: 'Spartan', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    justify-content: center;
+    padding: 5px;
+    text-align: center;  
+}
+
+#btn_rest {
+    background-color: var(--t1-key-rest-background);
+    border: 0px;
+    border-radius: 7px;
+    box-shadow: 0px 3px var(--t1-key-rest-shadow);
+    color: var(--t1-text-display);
+    cursor: pointer;
+    display: flex;
+    font-family: 'Spartan', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    grid-column: 1/ span 2;
+    justify-content: center;
+    padding: 5px;
+    text-align: center;
+}
+
+#btn_eq {
+    background-color: var(--t1-key-orange-background-toggle);
+    border: 0px;
+    border-radius: 7px;
+    box-shadow: 0px 3px var(--t1-key-equal-red-shadow);
+    cursor: pointer;
+    color: #ffffff;
+    display: flex;
+    font-family: 'Spartan', sans-serif;
+    font-size: 30px;
+    grid-column: 3/ span 2;
+    justify-content: center;
+    padding: 5px;
+    text-align: center;
+}
+
+#btn_del {
+    background-color: var(--t1-key-rest-background);
+    border: 0px;
+    border-radius: 7px;
+    box-shadow: 0px 3px var(--t1-key-rest-shadow);
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    font-family: 'Spartan', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    justify-content: center;
+    padding: 5px;
+    text-align: center;   
+}
+
+.grid_btns button:active {
+    transform: translateY(2px);
+  }
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
